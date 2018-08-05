@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BeFaster.App.Solutions.HLO;
+using NUnit.Framework;
 
 namespace BeFaster.App.Tests.Solutions.HLO
 {
-    class HelloSolutionTest
+    [TestFixture]
+    public class HelloSolutionTest
     {
+        [TestCase("Bob", ExpectedResult = "Hello Bob")]
+        public static string DisplayHelloFriend(string friendName)
+        {
+            return HelloSolution.Hello(friendName);
+        }
     }
 }
