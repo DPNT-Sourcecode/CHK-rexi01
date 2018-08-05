@@ -22,19 +22,22 @@ namespace BeFaster.App.Solutions.CHK
             int totalAItems = items.Where(x => x.Equals(AItem)).Count();
             int totalBItems = items.Where(x => x.Equals(BItem)).Count();
 
-            while (totalAItems % 2 == 0)
+
+            if (totalAItems >= 3)
             {
-                if (totalAItems >= 3)
-                    totalPrice += 130;
-                else
-                    totalPrice += 50;
+                int multiplier = totalAItems / 3;
+                totalPrice += (130 * multiplier);
             }
+            else
+                totalPrice += 50;
 
             if (totalBItems >= 2)
             {
-                totalPrice += 45;
-                totalPrice += (30 * (totalAItems - 2));
+                int multiplier = totalAItems / 2;
+                totalPrice += (45 * multiplier);
             }
+            else
+                totalPrice += 30;
 
             // calc total price of number of items
             foreach (char item in items)
