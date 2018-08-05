@@ -13,16 +13,28 @@ namespace BeFaster.App.Solutions.CHK
             int totalBItems = items.Where(x => x.Equals("B")).Count();
             IEnumerable<string> itemsDistinct = items.Distinct();
 
+            if (totalAItems == 3)
+            {
+                totalPrice += 130;
+                items.Remove("A");
+            }
+
+            if (totalBItems == 2)
+            {
+                totalPrice += 45;
+                items.Remove("B");
+            }
+
             // calc total price of number of items
-            foreach (string item in itemsDistinct)
+            foreach (string item in items)
             {
                 switch (item)
                 {
                     case "A":
-                        totalPrice += totalAItems == 3 ? 130 : 50;
+                        totalPrice += 50;
                         continue;
                     case "B":
-                        totalPrice += totalBItems == 2 ? 45 : 30;
+                        totalPrice += 30;
                         continue;
                     case "C":
                         totalPrice += 20;
