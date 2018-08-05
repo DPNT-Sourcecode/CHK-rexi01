@@ -6,7 +6,7 @@ namespace BeFaster.App.Tests.Solutions.FIZ
     [TestFixture]
     public static class FizzBuzzSolutionTest
     {
-        [TestCase(1, ExpectedResult = 1)]
+        [TestCase(1, ExpectedResult = "1")]
         public static string PrintFizzBuzz(int number)
         {
             return FizzBuzzSolution.FizzBuzz(number);
