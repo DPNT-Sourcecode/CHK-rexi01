@@ -27,12 +27,14 @@ namespace BeFaster.App.Solutions.CHK
             {
                 int multiplier = totalAItems / 3;
                 totalPrice += (130 * multiplier);
+                totalAItems = totalAItems - (totalAItems * multiplier);
             }
 
             if (totalBItems >= 2)
             {
                 int multiplier = totalBItems / 2;
                 totalPrice += (45 * multiplier);
+                totalAItems = totalBItems - (totalBItems * multiplier);
             }
 
             // calc total price of number of items
