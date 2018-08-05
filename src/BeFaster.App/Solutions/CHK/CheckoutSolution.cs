@@ -22,11 +22,17 @@ namespace BeFaster.App.Solutions.CHK
             int totalAItems = items.Where(x => x.Equals(AItem)).Count();
             int totalBItems = items.Where(x => x.Equals(BItem)).Count();
 
-            if (totalAItems == 3)
+            if (totalAItems >= 3)
+            {
                 totalPrice += 130;
+                totalPrice += (50 * (totalAItems - 3));
+            }
 
-            if (totalBItems == 2)
+            if (totalBItems >= 2)
+            {
                 totalPrice += 45;
+                totalPrice += (30 * (totalAItems - 2));
+            }
 
             // calc total price of number of items
             foreach (char item in items)
@@ -34,11 +40,11 @@ namespace BeFaster.App.Solutions.CHK
                 switch (item)
                 {
                     case 'A':
-                        if (totalAItems != 3)
+                        if (totalAItems < 3)
                             totalPrice += 50;
                         continue;
                     case 'B':
-                        if (totalAItems != 2)
+                        if (totalAItems < 2)
                             totalPrice += 30;
                         continue;
                     case 'C':
