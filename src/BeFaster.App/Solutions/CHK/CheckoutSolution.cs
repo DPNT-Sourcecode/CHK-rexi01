@@ -29,7 +29,7 @@
                         totalPrice += 15;
                         break;
                     default:
-                        return -1;
+                        return 0;
                 }
             }
             return totalPrice;
