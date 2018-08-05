@@ -8,21 +8,23 @@ namespace BeFaster.App.Solutions.CHK
         public static int Checkout(string skus)
         {
             int totalPrice = 0;
-            IList<string> items = skus.Split(',');
-            int totalAItems = items.Where(x => x.Equals("A")).Count();
-            int totalBItems = items.Where(x => x.Equals("B")).Count();
+            var items = skus.Split(',').ToList();
+            string AItem = "A";
+            string BItem = "B";
+            int totalAItems = items.Where(x => x.Equals(AItem)).Count();
+            int totalBItems = items.Where(x => x.Equals(BItem)).Count();
             IEnumerable<string> itemsDistinct = items.Distinct();
 
             if (totalAItems == 3)
             {
                 totalPrice += 130;
-                items.Remove("A");
+                items.RemoveAll(x => x.Equals(AItem));
             }
 
             if (totalBItems == 2)
             {
                 totalPrice += 45;
-                items.Remove("B");
+                items.RemoveAll(x => x.Equals(BItem));
             }
 
             // calc total price of number of items
@@ -43,7 +45,7 @@ namespace BeFaster.App.Solutions.CHK
                         totalPrice += 15;
                         continue;
                     default:
-                        return 0;
+                        throw new System.Exception("Invalid item");
                 }
             }
             return totalPrice;
