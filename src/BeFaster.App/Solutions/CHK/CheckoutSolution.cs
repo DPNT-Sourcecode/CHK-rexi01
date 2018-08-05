@@ -13,14 +13,14 @@ namespace BeFaster.App.Solutions.CHK
             char[] items = new char[skus.Length];
             string AItem = "A";
             string BItem = "B";
-            int totalAItems = items.Where(x => x.Equals(AItem)).Count();
-            int totalBItems = items.Where(x => x.Equals(BItem)).Count();
 
             using (StringReader sr = new StringReader(skus))
             {
                 sr.Read(items, 0, skus.Length);
-                Console.WriteLine(items);
             }
+
+            int totalAItems = items.Where(x => x.Equals(AItem)).Count();
+            int totalBItems = items.Where(x => x.Equals(BItem)).Count();
 
             //if (totalAItems == 3)
             //{
