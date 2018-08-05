@@ -45,7 +45,7 @@ namespace BeFaster.App.Solutions.CHK
                         totalPrice += 15;
                         continue;
                     default:
-                        throw new System.Exception("Invalid item");
+                        throw new System.ArgumentException("Invalid item");
                 }
             }
             return totalPrice;
