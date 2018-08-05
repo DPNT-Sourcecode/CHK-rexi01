@@ -6,8 +6,8 @@ namespace BeFaster.App.Tests.Solutions.HLO
     [TestFixture]
     public class HelloSolutionTest
     {
-        [TestCase("world", ExpectedResult = "Hello, world")]
-        public static string DisplayHelloFriend(string friendName)
+        [TestCase("Craftman", ExpectedResult = "Hello, world!")]
+        public static void DisplayHelloFriend(string friendName)
         {
             return HelloSolution.Hello(friendName);
         }
