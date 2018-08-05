@@ -22,10 +22,12 @@ namespace BeFaster.App.Solutions.CHK
             int totalAItems = items.Where(x => x.Equals(AItem)).Count();
             int totalBItems = items.Where(x => x.Equals(BItem)).Count();
 
-            if (totalAItems >= 3)
+            while (totalAItems % 2 == 0)
             {
-                totalPrice += 130;
-                totalPrice += (50 * (totalAItems - 3));
+                if (totalAItems >= 3)
+                    totalPrice += 130;
+                else
+                    totalPrice += 50;
             }
 
             if (totalBItems >= 2)
