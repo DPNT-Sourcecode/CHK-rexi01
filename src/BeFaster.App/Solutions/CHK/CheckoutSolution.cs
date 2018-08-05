@@ -17,17 +17,17 @@
                     case "A":
                         totalAItems++;
                         totalPrice += totalAItems == 3 ? 130 : 50;
-                        break;
+                        continue;
                     case "B":
                         totalBItems++;
                         totalPrice += totalBItems == 2 ? 45 : 30;
-                        break;
+                        continue;
                     case "C":
                         totalPrice += 20;
-                        break;
+                        continue;
                     case "D":
                         totalPrice += 15;
-                        break;
+                        continue;
                     default:
                         return 0;
                 }
