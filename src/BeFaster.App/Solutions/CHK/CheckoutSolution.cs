@@ -74,8 +74,11 @@ namespace BeFaster.App.Solutions.CHK
                     totalPrice += items['X'] * nonGroupItems;
                 }
 
-                if (groupOffer.Contains(skusItem) && skusItem != 'Z' && skusItem != 'X')
+                if (groupOffer.Contains(skusItem) && skusItem != 'Z')
                 {
+                    if (skusChar.Length < 6 && skusItem == 'X')
+                        continue;
+
                     totalAny3Items++;
                     if(totalAny3Items > 3 && skusChar.Length < 6)
                         totalPrice += items[skusItem];
