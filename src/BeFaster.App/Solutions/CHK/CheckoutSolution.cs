@@ -69,16 +69,14 @@ namespace BeFaster.App.Solutions.CHK
 
             foreach (char skusItem in skusChar)
             {
-                if (groupOffer.Contains(skusItem) && skusItem != 'Z' && skusItem != 'X')
+                if(skusItem == 'X' && totalAny3Items > 3 && skusChar.Length < 6)
+                    totalPrice += items['X'] * nonGroupItems;
+
+                if (groupOffer.Contains(skusItem) && skusItem != 'Z')
                 {
                     totalAny3Items++;
                     if(totalAny3Items > 3 && skusChar.Length < 6)
-                    {
-                        if(nonGroupItems >= 1)
-                            totalPrice += items['X'] * nonGroupItems;
-
                         totalPrice += items[skusItem];
-                    }
                 }
 
                 if (!items.ContainsKey(skusItem))
