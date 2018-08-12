@@ -13,6 +13,8 @@ namespace BeFaster.App.Solutions.CHK
             char[] items = new char[skus.Length];
             char AItem = 'A';
             char BItem = 'B';
+            char CItem = 'C';
+            char DItem = 'D';
             char EItem = 'E';
 
             using (StringReader sr = new StringReader(skus))
@@ -22,6 +24,8 @@ namespace BeFaster.App.Solutions.CHK
 
             int totalAItems = items.Where(x => x.Equals(AItem)).Count();
             int totalBItems = items.Where(x => x.Equals(BItem)).Count();
+            int totalCItems = items.Where(x => x.Equals(CItem)).Count();
+            int totalDItems = items.Where(x => x.Equals(DItem)).Count();
             int totalEItems = items.Where(x => x.Equals(EItem)).Count();
 
             // calc total price of number of items
@@ -69,10 +73,10 @@ namespace BeFaster.App.Solutions.CHK
                             totalPrice += 30 * totalBItems;
                         continue;
                     case 'C':
-                        totalPrice += 20;
+                        totalPrice += 20 * totalCItems;
                         continue;
                     case 'D':
-                        totalPrice += 15;
+                        totalPrice += 15 * totalDItems;
                         continue;
                     case 'E':
                         totalPrice += 40 * totalEItems;
