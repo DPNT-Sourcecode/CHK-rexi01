@@ -16,6 +16,7 @@ namespace BeFaster.App.Solutions.CHK
             char CItem = 'C';
             char DItem = 'D';
             char EItem = 'E';
+            char FItem = 'F';
 
             using (StringReader sr = new StringReader(skus))
             {
@@ -27,6 +28,7 @@ namespace BeFaster.App.Solutions.CHK
             int totalCItems = items.Where(x => x.Equals(CItem)).Count();
             int totalDItems = items.Where(x => x.Equals(DItem)).Count();
             int totalEItems = items.Where(x => x.Equals(EItem)).Count();
+            int totalFItems = items.Where(x => x.Equals(FItem)).Count();
 
             // calc total price of number of items
             foreach (char item in items.Distinct())
@@ -80,6 +82,20 @@ namespace BeFaster.App.Solutions.CHK
                         continue;
                     case 'E':
                         totalPrice += 40 * totalEItems;
+                        continue;
+                    case 'F':
+                        // offer: buy 2Fs and get another F free
+                        if (totalFItems >= 3)
+                        {
+                            int multiplier = totalFItems / 3;
+                            totalPrice += 0;
+                            for (int i = 0; i < multiplier; i++)
+                            {
+                                totalFItems--;
+                            }
+                        }
+                        if (totalFItems > 0)
+                            totalPrice += 10 * totalFItems;
                         continue;
                     default:
                         return -1;
