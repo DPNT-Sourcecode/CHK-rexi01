@@ -314,8 +314,10 @@ namespace BeFaster.App.Solutions.CHK
                             totalAny3Items++;
 
                         if (totalAny3Items >= 3)
+                        {
                             totalPrice -= offers["STXYZ"];
-
+                            totalAny3Items -= 3;
+                        }
                         totalPrice += items[item] * totalXItems;
                         continue;
                     case 'Y':
