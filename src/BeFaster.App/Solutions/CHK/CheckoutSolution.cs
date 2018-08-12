@@ -114,6 +114,86 @@ namespace BeFaster.App.Solutions.CHK
                         if (totalFItems > 0)
                             totalPrice += 10 * totalFItems;
                         continue;
+                    case 'G':
+                        int totalGItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalGItems;
+                        continue;
+                    case 'H':
+                        int totalHItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalHItems;
+                        continue;
+                    case 'I':
+                        int totalIItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalIItems;
+                        continue;
+                    case 'J':
+                        int totalJItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalJItems;
+                        continue;
+                    case 'K':
+                        int totalKItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalKItems;
+                        continue;
+                    case 'L':
+                        int totalLItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalLItems;
+                        continue;
+                    case 'M':
+                        int totalMItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalMItems;
+                        continue;
+                    case 'N':
+                        int totalNItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalNItems;
+                        continue;
+                    case 'O':
+                        int totalOItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalOItems;
+                        continue;
+                    case 'P':
+                        int totalPItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalPItems;
+                        continue;
+                    case 'Q':
+                        int totalQItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalQItems;
+                        continue;
+                    case 'R':
+                        int totalRItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalRItems;
+                        continue;
+                    case 'S':
+                        int totalSItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalSItems;
+                        continue;
+                    case 'T':
+                        int totalTItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalTItems;
+                        continue;
+                    case 'U':
+                        int totalUItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalUItems;
+                        continue;
+                    case 'V':
+                        int totalVItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalVItems;
+                        continue;
+                    case 'W':
+                        int totalWItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalWItems;
+                        continue;
+                    case 'X':
+                        int totalXItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalXItems;
+                        continue;
+                    case 'Y':
+                        int totalYItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalYItems;
+                        continue;
+                    case 'Z':
+                        int totalZItems = skusChar.Where(x => x.Equals(item)).Count();
+                        totalPrice += items[item] * totalZItems;
+                        continue;
                     default:
                         return -1;
                 }
