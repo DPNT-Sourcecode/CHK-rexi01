@@ -55,7 +55,7 @@ namespace BeFaster.App.Solutions.CHK
                             totalPrice += 0;
                             for (int i=0; i<multiplier; i++)
                             {
-                                --totalBItems;
+                                totalBItems--;
                             }
                         }
                         if (totalBItems % 2 == 0 || totalBItems > 2)
