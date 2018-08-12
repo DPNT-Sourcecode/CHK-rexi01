@@ -261,7 +261,7 @@ namespace BeFaster.App.Solutions.CHK
                         continue;
                     case 'S':
                         int totalSItems = skusChar.Where(x => x.Equals(item)).Count();
-                        if (totalSItems == 1 && totalAny3Items >= 3)
+                        if (totalAny3Items >= 3)
                             // already added as a group item
                             continue;
 
@@ -269,7 +269,7 @@ namespace BeFaster.App.Solutions.CHK
                         continue;
                     case 'T':
                         int totalTItems = skusChar.Where(x => x.Equals(item)).Count();
-                        if (totalTItems == 1 && totalAny3Items >= 3)
+                        if (totalAny3Items >= 3)
                             // already added as a group item
                             continue;
 
@@ -315,7 +315,7 @@ namespace BeFaster.App.Solutions.CHK
                         continue;
                     case 'X':
                         int totalXItems = skusChar.Where(x => x.Equals(item)).Count();
-                        if (totalXItems == 1 && totalAny3Items >= 3)
+                        if (totalAny3Items >= 3)
                             // already added as a group item
                             continue;
 
@@ -323,7 +323,7 @@ namespace BeFaster.App.Solutions.CHK
                         continue;
                     case 'Y':
                         int totalYItems = skusChar.Where(x => x.Equals(item)).Count();
-                        if (totalYItems == 1 && totalAny3Items >= 3)
+                        if (totalAny3Items >= 3)
                             // already added as a group item
                             continue;
 
@@ -331,7 +331,7 @@ namespace BeFaster.App.Solutions.CHK
                         continue;
                     case 'Z':
                         int totalZItems = skusChar.Where(x => x.Equals(item)).Count();
-                        if (totalZItems == 1 && totalAny3Items >= 3)
+                        if (totalAny3Items >= 3)
                             // already added as a group item
                             continue;
 
