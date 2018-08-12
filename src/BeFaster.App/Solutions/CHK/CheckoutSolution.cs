@@ -61,7 +61,7 @@ namespace BeFaster.App.Solutions.CHK
             int totalAny3Items = 0;
 
             if (skusChar.Contains('Z'))
-                totalAny3Items++;
+                totalAny3Items = skusChar.Where(x =>x.Equals('Z')).Count();
 
             foreach (char skusItem in skusChar)
             {
