@@ -141,20 +141,19 @@ namespace BeFaster.App.Solutions.CHK
                         continue;
                     case 'H':
                         int totalHItems = skusChar.Where(x => x.Equals(item)).Count();
-                        // offer: 5H for 45, 10H for 80 
-                        if (totalHItems % 5 == 0 || totalHItems > 5)
-                        {
-                            // offer: 5H for 45
-                            int multiplier = totalHItems / 5;
-                            totalPrice += (offers["5H"] * multiplier);
-                            totalHItems -= (5 * multiplier);
-                        }
                         if (totalHItems % 10 == 0 || totalHItems > 10)
                         {
                             // offer: 10H for 80 
                             int multiplier = totalHItems / 10;
                             totalPrice += (offers["10H"] * multiplier);
                             totalHItems -= (10 * multiplier);
+                        }
+                        if (totalHItems % 5 == 0 || totalHItems > 5)
+                        {
+                            // offer: 5H for 45
+                            int multiplier = totalHItems / 5;
+                            totalPrice += (offers["5H"] * multiplier);
+                            totalHItems -= (5 * multiplier);
                         }
                         if (totalHItems > 0)
                             totalPrice += items[item] * totalHItems;
