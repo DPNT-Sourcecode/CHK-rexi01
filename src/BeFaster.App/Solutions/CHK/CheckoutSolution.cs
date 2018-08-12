@@ -37,7 +37,7 @@ namespace BeFaster.App.Solutions.CHK
                             totalPrice += (200 * multiplier);
                             totalAItems -= (5 * multiplier);
                         }
-                        else if (totalAItems % 3 == 0 || totalAItems > 3)
+                        if (totalAItems % 3 == 0 || totalAItems > 3)
                         {
                             // offer: 3A for 130
                             int multiplier = totalAItems / 3;
