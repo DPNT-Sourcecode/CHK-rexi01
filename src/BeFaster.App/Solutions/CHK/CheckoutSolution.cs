@@ -51,8 +51,12 @@ namespace BeFaster.App.Solutions.CHK
                         // offer: buy one get B free
                         if (totalEItems >= 2)
                         {
+                            int multiplier = totalEItems / 2;
                             totalPrice += 0;
-                            --totalBItems;
+                            for (int i=0; i<multiplier; i++)
+                            {
+                                --totalBItems;
+                            }
                         }
                         if (totalBItems % 2 == 0 || totalBItems > 2)
                         {
