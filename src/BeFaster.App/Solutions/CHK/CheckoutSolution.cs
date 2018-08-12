@@ -67,23 +67,24 @@ namespace BeFaster.App.Solutions.CHK
             {
                 if (groupOffer.Contains(skusItem) && skusItem != 'Z')
                     totalAny3Items++;
-            }
-
-            foreach (char skusItem in skusChar)
-            {
-                // apply group offer
-                if (totalAny3Items % 3 == 0)
-                    {
-                        int multiplier = totalAny3Items / 3;
-                        totalPrice += offers[groupOffer] * multiplier;
-                    }
-                    if (totalAny3Items % 3 != 0 && totalAny3Items > 3)
-                    {
-                        totalPrice += items[skusItem];
-                    }
 
                 if (!items.ContainsKey(skusItem))
                     return -1;
+            }
+
+            // apply group offer
+            if (totalAny3Items % 3 == 0)
+            {
+                int multiplier = totalAny3Items / 3;
+                totalPrice += offers[groupOffer] * multiplier;
+            }
+            if (totalAny3Items % 3 != 0 && totalAny3Items > 3)
+            {
+                var nonOfferItems = skusChar.Except(groupOffer);
+                foreach (char nonOfferItem in nonOfferItems)
+                {
+                    totalPrice += items[nonOfferItem];
+                }
             }
 
             // calc total price of number of items
