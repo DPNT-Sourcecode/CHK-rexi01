@@ -30,7 +30,7 @@ namespace BeFaster.App.Solutions.CHK
                 switch (item)
                 {
                     case 'A':
-                        if (totalAItems % 5 == 0)
+                        if (totalAItems % 5 == 0 || totalAItems > 5)
                         {
                             // offer: 5A for 200
                             int multiplier = totalAItems / 5;
