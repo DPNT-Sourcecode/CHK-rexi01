@@ -7,6 +7,9 @@ namespace BeFaster.App.Tests.Solutions.CHK
     [TestFixture]
     public static class CheckoutSolutionTest
     {
+        [TestCase("BBB", ExpectedResult = 75)]
+        [TestCase("BEBEEE", ExpectedResult = 160)]
+        [TestCase("EEEEBB", ExpectedResult = 160)]
         [TestCase("BBBEE", ExpectedResult = 125)]
         [TestCase("ABBEE", ExpectedResult = 160)]
         [TestCase("ABCDE", ExpectedResult = 155)]

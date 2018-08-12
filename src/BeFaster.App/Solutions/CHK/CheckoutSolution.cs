@@ -54,7 +54,7 @@ namespace BeFaster.App.Solutions.CHK
                             totalPrice += 0;
                             --totalBItems;
                         }
-                        if (totalBItems % 2 == 0)
+                        if (totalBItems % 2 == 0 || totalBItems > 2)
                         {
                             // offer : 2B for 45
                             int multiplier = totalBItems / 2;
