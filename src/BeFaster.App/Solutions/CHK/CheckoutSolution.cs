@@ -66,7 +66,13 @@ namespace BeFaster.App.Solutions.CHK
             foreach (char skusItem in skusChar)
             {
                 if (groupOffer.Contains(skusItem) && skusItem != 'Z')
+                {
                     totalAny3Items++;
+                    if(totalAny3Items > 3 && skusChar.Length < 6)
+                    {
+                        totalPrice += items[skusItem];
+                    }
+                }
 
                 if (!items.ContainsKey(skusItem))
                     return -1;
@@ -77,14 +83,6 @@ namespace BeFaster.App.Solutions.CHK
             {
                 int multiplier = totalAny3Items / 3;
                 totalPrice += offers[groupOffer] * multiplier;
-                if (totalAny3Items % 3 != 0 && totalAny3Items > 3)
-                {
-                    var nonOfferItems = groupOffer.Except(skusChar);
-                    foreach (char nonOfferItem in nonOfferItems)
-                    {
-                        totalPrice += items[nonOfferItem];
-                    }
-                }
             }
 
             // calc total price of number of items
