@@ -60,24 +60,23 @@ namespace BeFaster.App.Solutions.CHK
             int totalRItems = skusChar.Where(x => x.Equals('R')).Count();
             int totalAny3Items = 0;
 
+            if (skusChar.Contains('Z'))
+                totalAny3Items++;
+
             foreach (char skusItem in skusChar)
             {
-                if (skusChar.Contains('Z') && skusItem == 'Z')
+                if (groupOffer.Contains(skusItem) && skusItem != 'Z')
                 {
-                    if (groupOffer.Contains(skusItem))
-                    {
-                        totalAny3Items++;
+                    totalAny3Items++;
 
-                        // apply group offer
-                        if (totalAny3Items == 3)
-                            totalPrice += 45;
+                    // apply group offer
+                    if (totalAny3Items == 3)
+                        totalPrice += 45;
 
-                        if (totalAny3Items > 3)
-                        {
-                            totalPrice += items[skusItem];
-                        }
-
-                    }
+                    //if (totalAny3Items > 3)
+                    //{
+                    //    totalPrice += items[skusItem];
+                    //}
                 }
                 if (!items.ContainsKey(skusItem))
                     return -1;
