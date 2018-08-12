@@ -61,23 +61,39 @@ namespace BeFaster.App.Solutions.CHK
             int totalAny3Items = 0;
 
             if (skusChar.Contains('Z'))
-                totalAny3Items = skusChar.Where(x =>x.Equals('Z')).Count();
+                totalAny3Items = skusChar.Where(x => x.Equals('Z')).Count();
 
             var nonGroupItems = 0;
             if (skusChar.Contains('X'))
                 nonGroupItems = skusChar.Where(x => x.Equals('X')).Count();
 
+            int totalGroupItem = 0;
             foreach (char skusItem in skusChar)
             {
-                if (skusItem == 'X' && skusChar.Length < 6)
+                if (groupOffer.Contains(skusItem))
                 {
-                    totalPrice += items['X'] * nonGroupItems;
+                    totalGroupItem++;
                 }
+            }
 
-                if (groupOffer.Contains(skusItem) && skusItem != 'Z' && skusItem != 'X')
+            // apply group offer
+            if (totalGroupItem % 3 == 0 || totalGroupItem > 3)
+            {
+                int multiplier = totalGroupItem / 3;
+                totalPrice += offers[groupOffer] * multiplier;
+            }
+
+            foreach (char skusItem in skusChar)
+            {
+                if (groupOffer.Contains(skusItem) && skusItem != 'Z')
                 {
                     totalAny3Items++;
-                    if(totalAny3Items > 3 && skusChar.Length < 6)
+
+                    if (skusItem == 'X' && skusChar.Length < 6)
+                    {
+                        totalPrice += items['X'] * nonGroupItems;
+                    }
+                    if (totalAny3Items > 3 && skusChar.Length < 6)
                         totalPrice += items[skusItem];
                 }
 
@@ -85,12 +101,6 @@ namespace BeFaster.App.Solutions.CHK
                     return -1;
             }
 
-            // apply group offer
-            if (totalAny3Items % 3 == 0 || totalAny3Items > 3)
-            {
-                int multiplier = totalAny3Items / 3;
-                totalPrice += offers[groupOffer] * multiplier;
-            }
 
             // calc total price of number of items
             foreach (char item in items.Keys)
