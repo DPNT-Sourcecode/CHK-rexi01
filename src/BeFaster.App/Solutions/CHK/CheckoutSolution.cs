@@ -66,11 +66,13 @@ namespace BeFaster.App.Solutions.CHK
             foreach (char skusItem in skusChar)
             {
                 if (groupOffer.Contains(skusItem) && skusItem != 'Z')
-                {
                     totalAny3Items++;
+            }
 
-                    // apply group offer
-                    if (totalAny3Items % 3 == 0)
+            foreach (char skusItem in skusChar)
+            {
+                // apply group offer
+                if (totalAny3Items % 3 == 0)
                     {
                         int multiplier = totalAny3Items / 3;
                         totalPrice += offers[groupOffer] * multiplier;
@@ -79,7 +81,7 @@ namespace BeFaster.App.Solutions.CHK
                     {
                         totalPrice += items[skusItem];
                     }
-                }
+
                 if (!items.ContainsKey(skusItem))
                     return -1;
             }
