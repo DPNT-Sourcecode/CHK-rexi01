@@ -7,6 +7,9 @@ namespace BeFaster.App.Tests.Solutions.CHK
     [TestFixture]
     public static class CheckoutSolutionTest
     {
+        [TestCase("BBBE", ExpectedResult = 85)]
+        [TestCase("ABBE", ExpectedResult = 120)]
+        [TestCase("ABCDE", ExpectedResult = 125)]
         [TestCase("ABCD", ExpectedResult = 115)]
         [TestCase("AAAA", ExpectedResult = 180)]
         [TestCase("AAAAA", ExpectedResult = 230)]
@@ -18,11 +21,5 @@ namespace BeFaster.App.Tests.Solutions.CHK
         {
             return CheckoutSolution.Checkout(skus);
         }
-
-        //[Test]
-        //public static void CheckoutInvalidItem(string skus)
-        //{
-        //    Assert.Throws<ArgumentException>(() => CheckoutSolution.Checkout(skus));
-        //}
     }
 }

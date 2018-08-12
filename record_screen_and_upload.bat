@@ -65,7 +65,7 @@ set JAVA_HOME=%JAVA_HOME:"=%
 @rem Note: in a batch script we need to use %% instead of just % as per the docs.
 
 for %%f in ("%JAVA_HOME%") do set JAVA_HOME=%%~sf
-set JAVA_EXE=%JAVA_HOME%\bin\java.exe
+set JAVA_EXE=%JAVA_HOME%
 
 echo.
 echo JAVA_HOME=%JAVA_HOME%
