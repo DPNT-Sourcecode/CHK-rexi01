@@ -51,7 +51,7 @@ namespace BeFaster.App.Solutions.CHK
                         continue;
                     case 'B':
                         // offer: buy one get B free
-                        if (totalEItems >= 1)
+                        if (totalEItems >= 2)
                         {
                             totalPrice += 0;
                             --totalBItems;
@@ -74,7 +74,7 @@ namespace BeFaster.App.Solutions.CHK
                         totalPrice += 15;
                         continue;
                     case 'E':
-                        totalPrice += 40;
+                        totalPrice += 40 * totalEItems;
                         continue;
                     default:
                         return -1;
