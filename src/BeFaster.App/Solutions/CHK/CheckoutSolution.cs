@@ -53,18 +53,18 @@ namespace BeFaster.App.Solutions.CHK
                         {
                             // offer: 5A for 200
                             int multiplier = totalAItems / 5;
-                            totalPrice += (200 * multiplier);
+                            totalPrice += (items[item] * multiplier);
                             totalAItems -= (5 * multiplier);
                         }
                         if (totalAItems % 3 == 0 || totalAItems > 3)
                         {
                             // offer: 3A for 130
                             int multiplier = totalAItems / 3;
-                            totalPrice += (130 * multiplier);
+                            totalPrice += (items[item] * multiplier);
                             totalAItems -= (3 * multiplier);
                         }
                         if (totalAItems > 0)
-                            totalPrice += 50 * totalAItems;
+                            totalPrice += items[item] * totalAItems;
                         continue;
                     case 'B':
                         int totalBItems = skusChar.Where(x => x.Equals(item)).Count();
@@ -82,22 +82,22 @@ namespace BeFaster.App.Solutions.CHK
                         {
                             // offer : 2B for 45
                             int multiplier = totalBItems / 2;
-                            totalPrice += (45 * multiplier);
+                            totalPrice += (items[item] * multiplier);
                             totalBItems -= 2 * multiplier;
                         }
                         if (totalBItems > 0)
-                            totalPrice += 30 * totalBItems;
+                            totalPrice += items[item] * totalBItems;
                         continue;
                     case 'C':
                         int totalCItems = skusChar.Where(x => x.Equals(item)).Count();
-                        totalPrice += 20 * totalCItems;
+                        totalPrice += items[item] * totalCItems;
                         continue;
                     case 'D':
                         int totalDItems = skusChar.Where(x => x.Equals(item)).Count();
-                        totalPrice += 15 * totalDItems;
+                        totalPrice += items[item] * totalDItems;
                         continue;
                     case 'E':
-                        totalPrice += 40 * totalEItems;
+                        totalPrice += items[item] * totalEItems;
                         continue;
                     case 'F':
                         int totalFItems = skusChar.Where(x => x.Equals(item)).Count();
@@ -120,7 +120,23 @@ namespace BeFaster.App.Solutions.CHK
                         continue;
                     case 'H':
                         int totalHItems = skusChar.Where(x => x.Equals(item)).Count();
-                        totalPrice += items[item] * totalHItems;
+                        // offer: 5H for 45, 10H for 80 
+                        if(totalHItems % 5 == 0 || totalHItems > 5)
+                        {
+                            // offer: 5H for 45
+                            int multiplier = totalHItems / 5;
+                            totalPrice += (items[item] * multiplier);
+                            totalHItems -= (5 * multiplier);
+                        }
+                        if (totalHItems % 10 == 0 || totalHItems > 10)
+                        {
+                            // offer: 10H for 80 
+                            int multiplier = totalHItems / 10;
+                            totalPrice += (items[item] * multiplier);
+                            totalHItems -= (10 * multiplier);
+                        }
+                        if (totalHItems > 0)
+                            totalPrice += items[item] * totalHItems;
                         continue;
                     case 'I':
                         int totalIItems = skusChar.Where(x => x.Equals(item)).Count();
