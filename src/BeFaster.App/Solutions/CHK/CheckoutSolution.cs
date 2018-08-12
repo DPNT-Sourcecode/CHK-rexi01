@@ -57,8 +57,14 @@ namespace BeFaster.App.Solutions.CHK
             int totalNItems = skusChar.Where(x => x.Equals('N')).Count();
             int totalRItems = skusChar.Where(x => x.Equals('R')).Count();
 
+            foreach (char skusItem in skusChar)
+            {
+                if (!items.ContainsKey(skusItem))
+                    return -1;
+            }
+
             // calc total price of number of items
-            foreach (char item in skusChar)
+            foreach (char item in items.Keys)
             {
                 switch (item)
                 {
@@ -136,7 +142,7 @@ namespace BeFaster.App.Solutions.CHK
                     case 'H':
                         int totalHItems = skusChar.Where(x => x.Equals(item)).Count();
                         // offer: 5H for 45, 10H for 80 
-                        if(totalHItems % 5 == 0 || totalHItems > 5)
+                        if (totalHItems % 5 == 0 || totalHItems > 5)
                         {
                             // offer: 5H for 45
                             int multiplier = totalHItems / 5;
