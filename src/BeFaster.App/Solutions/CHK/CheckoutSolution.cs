@@ -30,7 +30,7 @@ namespace BeFaster.App.Solutions.CHK
                 switch (item)
                 {
                     case 'A':
-                        if (5 * (int)Math.Round(totalAItems / 5.0) == 0)
+                        if (5 * (int)Math.Round(totalAItems / 5.0) == 5)
                         {
                             // offer: 5A for 200
                             int multiplier = totalAItems / 5;
@@ -38,7 +38,7 @@ namespace BeFaster.App.Solutions.CHK
                             int totalA = totalAItems - (5 * multiplier);
                             totalPrice += 50 * totalA;
                         }
-                        if (3 * (int)Math.Round(totalAItems / 3.0) == 0)
+                        if (3 * (int)Math.Round(totalAItems / 3.0) == 3)
                         {
                             // offer: 3A for 130
                             int multiplier = totalAItems / 3;
