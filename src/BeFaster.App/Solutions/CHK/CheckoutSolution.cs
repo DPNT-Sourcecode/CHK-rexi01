@@ -249,7 +249,7 @@ namespace BeFaster.App.Solutions.CHK
                         if (totalSItems >= 1 && totalAny3Items >= 3)
                         {
                             totalAny3Items++;
-                            totalPrice -= offers["Any3"];
+                            totalPrice -= offers["STXYZ"];
                         }
 
                         totalPrice += items[item] * totalSItems;
@@ -259,7 +259,7 @@ namespace BeFaster.App.Solutions.CHK
                         if (totalTItems >= 1 && totalAny3Items >= 3)
                         {
                             totalAny3Items++;
-                            totalPrice -= offers["Any3"];
+                            totalPrice -= offers["STXYZ"];
                         }
 
                         totalPrice += items[item] * totalTItems;
@@ -307,7 +307,7 @@ namespace BeFaster.App.Solutions.CHK
                         if (totalXItems >= 1 && totalAny3Items >= 3)
                         {
                             totalAny3Items++;
-                            totalPrice -= offers["Any3"];
+                            totalPrice -= offers["STXYZ"];
                         }
 
                         totalPrice += items[item] * totalXItems;
@@ -317,7 +317,7 @@ namespace BeFaster.App.Solutions.CHK
                         if (totalYItems >= 1 && totalAny3Items >= 3)
                         {
                             totalAny3Items++;
-                            totalPrice -= offers["Any3"];
+                            totalPrice -= offers["STXYZ"];
                         }
 
                         totalPrice += items[item] * totalYItems;
@@ -327,7 +327,7 @@ namespace BeFaster.App.Solutions.CHK
                         if (totalZItems >= 1 && totalAny3Items >= 3)
                         {
                             totalAny3Items++;
-                            totalPrice -= offers["Any3"];
+                            totalPrice -= offers["STXYZ"];
                         }
                         totalPrice += items[item] * totalZItems;
                         continue;
