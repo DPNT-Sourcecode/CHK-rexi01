@@ -52,10 +52,12 @@ namespace BeFaster.App.Solutions.CHK
                 {"3Q", 80},
                 {"2V", 90},
                 {"3V", 130},
+                {"STXYZ", 45 }
             };
             int totalEItems = skusChar.Where(x => x.Equals('E')).Count();
             int totalNItems = skusChar.Where(x => x.Equals('N')).Count();
             int totalRItems = skusChar.Where(x => x.Equals('R')).Count();
+            int totalAny3Items = 0;
 
             foreach (char skusItem in skusChar)
             {
@@ -244,10 +246,22 @@ namespace BeFaster.App.Solutions.CHK
                         continue;
                     case 'S':
                         int totalSItems = skusChar.Where(x => x.Equals(item)).Count();
+                        if (totalSItems >= 1 && totalAny3Items >= 3)
+                        {
+                            totalAny3Items++;
+                            totalPrice -= offers["Any3"];
+                        }
+
                         totalPrice += items[item] * totalSItems;
                         continue;
                     case 'T':
                         int totalTItems = skusChar.Where(x => x.Equals(item)).Count();
+                        if (totalTItems >= 1 && totalAny3Items >= 3)
+                        {
+                            totalAny3Items++;
+                            totalPrice -= offers["Any3"];
+                        }
+
                         totalPrice += items[item] * totalTItems;
                         continue;
                     case 'U':
@@ -290,14 +304,31 @@ namespace BeFaster.App.Solutions.CHK
                         continue;
                     case 'X':
                         int totalXItems = skusChar.Where(x => x.Equals(item)).Count();
+                        if (totalXItems >= 1 && totalAny3Items >= 3)
+                        {
+                            totalAny3Items++;
+                            totalPrice -= offers["Any3"];
+                        }
+
                         totalPrice += items[item] * totalXItems;
                         continue;
                     case 'Y':
                         int totalYItems = skusChar.Where(x => x.Equals(item)).Count();
+                        if (totalYItems >= 1 && totalAny3Items >= 3)
+                        {
+                            totalAny3Items++;
+                            totalPrice -= offers["Any3"];
+                        }
+
                         totalPrice += items[item] * totalYItems;
                         continue;
                     case 'Z':
                         int totalZItems = skusChar.Where(x => x.Equals(item)).Count();
+                        if (totalZItems >= 1 && totalAny3Items >= 3)
+                        {
+                            totalAny3Items++;
+                            totalPrice -= offers["Any3"];
+                        }
                         totalPrice += items[item] * totalZItems;
                         continue;
                     default:
