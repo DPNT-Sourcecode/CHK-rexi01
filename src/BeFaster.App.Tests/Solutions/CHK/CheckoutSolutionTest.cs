@@ -7,11 +7,17 @@ namespace BeFaster.App.Tests.Solutions.CHK
     [TestFixture]
     public static class CheckoutSolutionTest
     {
+        [TestCase("ABCDECBAABCABBAAAEEAA", ExpectedResult = 665)]
+        [TestCase("CCADDEEBBA", ExpectedResult = 28)]
+        [TestCase("ABCDEABCDE", ExpectedResult = 28)]
         [TestCase("BBB", ExpectedResult = 75)]
         [TestCase("BEBEEE", ExpectedResult = 160)]
         [TestCase("EEEEBB", ExpectedResult = 160)]
         [TestCase("BBBEE", ExpectedResult = 125)]
         [TestCase("ABBEE", ExpectedResult = 160)]
+        [TestCase("EEEB", ExpectedResult = 120)]
+        [TestCase("EEB", ExpectedResult = 80)]
+        [TestCase("EE", ExpectedResult = 80)]
         [TestCase("ABCDE", ExpectedResult = 155)]
         [TestCase("ABCD", ExpectedResult = 115)]
         [TestCase("AAAA", ExpectedResult = 180)]
@@ -19,8 +25,13 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("AAAAAA", ExpectedResult = 250)]
         [TestCase("AAAAAAAA", ExpectedResult = 330)]
         [TestCase("AAAAAAAAA", ExpectedResult = 380)]
+        [TestCase("AAAAAAAAAA", ExpectedResult = 400)]
         [TestCase("AAA", ExpectedResult = 130)]
         [TestCase("AA", ExpectedResult = 100)]
+        [TestCase("ABCa", ExpectedResult = -1)]
+        [TestCase("-", ExpectedResult = -1)]
+        [TestCase("a", ExpectedResult = -1)]
+        [TestCase("A", ExpectedResult = 50)]
         [TestCase("", ExpectedResult = 0)]
         public static int Checkout(string skus)
         {
