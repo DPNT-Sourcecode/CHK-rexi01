@@ -270,7 +270,7 @@ namespace BeFaster.App.Solutions.CHK
                         if (totalVItems % 3 == 0 || totalVItems > 3)
                         {
                             // offer: 3V for 130
-                            int multiplier = totalVItems / 5;
+                            int multiplier = totalVItems / 3;
                             totalPrice += (offers["3V"] * multiplier);
                             totalVItems -= (3 * multiplier);
                         }
