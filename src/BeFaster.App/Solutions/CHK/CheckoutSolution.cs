@@ -58,7 +58,7 @@ namespace BeFaster.App.Solutions.CHK
             int totalRItems = skusChar.Where(x => x.Equals('R')).Count();
 
             // calc total price of number of items
-            foreach (char item in items.Keys)
+            foreach (char item in skusChar)
             {
                 switch (item)
                 {
