@@ -63,13 +63,20 @@ namespace BeFaster.App.Solutions.CHK
             if (skusChar.Contains('Z'))
                 totalAny3Items = skusChar.Where(x =>x.Equals('Z')).Count();
 
+            var nonGroupItems = 0;
+            if (skusChar.Contains('X'))
+                nonGroupItems = skusChar.Where(x => x.Equals('X')).Count();
+
             foreach (char skusItem in skusChar)
             {
-                if (groupOffer.Contains(skusItem) && skusItem != 'Z')
+                if (groupOffer.Contains(skusItem) && skusItem != 'Z' && skusItem != 'X')
                 {
                     totalAny3Items++;
                     if(totalAny3Items > 3 && skusChar.Length < 6)
                     {
+                        if(nonGroupItems >= 1)
+                            totalPrice += items['X'] * nonGroupItems;
+
                         totalPrice += items[skusItem];
                     }
                 }
