@@ -278,7 +278,7 @@ namespace BeFaster.App.Solutions.CHK
                         {
                             // offer: 2V for 90
                             int multiplier = totalVItems / 2;
-                            totalPrice += (offers["3V"] * multiplier);
+                            totalPrice += (offers["2V"] * multiplier);
                             totalVItems -= (2 * multiplier);
                         }
                         if (totalVItems > 0)
