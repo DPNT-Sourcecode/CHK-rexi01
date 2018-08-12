@@ -330,7 +330,7 @@ namespace BeFaster.App.Solutions.CHK
                         continue;
                     case 'X':
                         int totalXItems = skusChar.Where(x => x.Equals(item)).Count();
-                        if (totalAny3Items >= 3)
+                        if (totalAny3Items >= 0)
                             // already added as a group item
                             continue;
 
